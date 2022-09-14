@@ -47,6 +47,14 @@ const Register = (props) => {
     setEmail(e.target.value);
   }
   function handleConfirmPassword(e) {
+    
+    if(password===e.target.value){
+      setPopUp(' ');
+    }
+    else{
+      
+      setPopUp('Password Doesnt match');
+    }
     setConfirmPassword(e.target.value);
   }
 //   function goToPhone(passedType) {
@@ -62,13 +70,13 @@ const Register = (props) => {
             pan:panNumber,
             address:address,
             email:email,
-            mobile_number:mobileNumber,
+            mobileNumber:mobileNumber,
             password:password,
             username:userName
 
     }
     dispatch(saveUser(user));
-    navigate('login');
+    navigate('/login');
       
      }
      else{

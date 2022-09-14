@@ -1,15 +1,12 @@
 import axios from "axios";
 
-export const saveUser = (userName, password) => {
+export const saveUser = (user) => {
     return async(dispatch) => {
-        const response = await axios.post('http://localhost:8089/customer/save',{
-            userName: userName,
-            password: password
-        });
+        const data = await axios.post('http://localhost:8089/customer/save', user).then((response)=> response.data).catch((error)=> console.log(error));
         
         dispatch({
             type: 'SAVE_USER',
-            payload: response.data
+            payload: data
         })
     }
 }
