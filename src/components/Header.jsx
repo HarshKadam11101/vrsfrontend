@@ -23,6 +23,9 @@ class Header extends React.Component{
         </li>
         <li className="nav-item">
           <Link className="nav-link active" to={"/register"}>Register</Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link active" to={"/car"}>Cars</Link>
         </li>  
       </ul>
     </div>
